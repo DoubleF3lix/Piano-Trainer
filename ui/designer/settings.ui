@@ -1,0 +1,2342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsWindow</class>
+ <widget class="QMainWindow" name="SettingsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>620</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>620</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>620</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Settings</string>
+  </property>
+  <property name="statusTip">
+   <string comment="test1" extracomment="testing"/>
+  </property>
+  <property name="whatsThis">
+   <string comment="aaaaa" extracomment="testing"/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton[piano_key=&quot;end&quot;] {
+	background-color: gray; 
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+}
+
+QPushButton[piano_key=&quot;white&quot;] {
+	background-color: white; 
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: 900;
+}
+
+QPushButton[piano_key=&quot;white&quot;]:hover {
+	background-color: rgb(71, 205, 255); 
+}
+
+QPushButton[piano_key=&quot;black&quot;] {
+	background-color: black; 
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	font-weight: 900;
+	color: white;
+}
+
+QPushButton[piano_key=&quot;black&quot;]:hover {
+	background-color: rgb(71, 205, 255); 
+	border-color: rgb(71, 205, 255);
+}
+
+QLabel[octave_indicator=&quot;true&quot;] {
+	border-color: black;
+	border-width: 2px;
+	border-style: outset;
+	border-bottom: none;
+}
+
+QPushButton[note_enabled=&quot;false&quot;][piano_key=&quot;white&quot;]:!hover {
+	background-color: rgb(255, 189, 189);
+}
+
+QPushButton[note_enabled=&quot;false&quot;][piano_key=&quot;black&quot;]:!hover {
+	background-color: rgb(80, 0, 1);
+	border-color: rgb(80, 0, 1);
+}
+
+QPushButton[shecret_button=&quot;true&quot;] {
+	background-color: rgba(105, 133, 255, 0)
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="piano_left_end">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>19</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>end</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_d2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>49</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_cS2">
+    <property name="geometry">
+     <rect>
+      <x>43</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_e2">
+    <property name="geometry">
+     <rect>
+      <x>69</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_f2">
+    <property name="geometry">
+     <rect>
+      <x>89</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_g2">
+    <property name="geometry">
+     <rect>
+      <x>109</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_a2">
+    <property name="geometry">
+     <rect>
+      <x>129</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_b2">
+    <property name="geometry">
+     <rect>
+      <x>149</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_c3">
+    <property name="geometry">
+     <rect>
+      <x>169</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_d3">
+    <property name="geometry">
+     <rect>
+      <x>189</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_e3">
+    <property name="geometry">
+     <rect>
+      <x>209</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_f3">
+    <property name="geometry">
+     <rect>
+      <x>229</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_g3">
+    <property name="geometry">
+     <rect>
+      <x>249</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_a3">
+    <property name="geometry">
+     <rect>
+      <x>269</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_b3">
+    <property name="geometry">
+     <rect>
+      <x>289</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_c4">
+    <property name="geometry">
+     <rect>
+      <x>309</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_d4">
+    <property name="geometry">
+     <rect>
+      <x>329</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_e4">
+    <property name="geometry">
+     <rect>
+      <x>349</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_f4">
+    <property name="geometry">
+     <rect>
+      <x>369</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_g4">
+    <property name="geometry">
+     <rect>
+      <x>389</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_a4">
+    <property name="geometry">
+     <rect>
+      <x>409</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_b4">
+    <property name="geometry">
+     <rect>
+      <x>429</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_c5">
+    <property name="geometry">
+     <rect>
+      <x>449</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_d5">
+    <property name="geometry">
+     <rect>
+      <x>469</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_e5">
+    <property name="geometry">
+     <rect>
+      <x>489</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_f5">
+    <property name="geometry">
+     <rect>
+      <x>509</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_g5">
+    <property name="geometry">
+     <rect>
+      <x>529</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_a5">
+    <property name="geometry">
+     <rect>
+      <x>549</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_b5">
+    <property name="geometry">
+     <rect>
+      <x>569</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_c6">
+    <property name="geometry">
+     <rect>
+      <x>589</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_d6">
+    <property name="geometry">
+     <rect>
+      <x>609</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_e6">
+    <property name="geometry">
+     <rect>
+      <x>629</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_f6">
+    <property name="geometry">
+     <rect>
+      <x>649</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_g6">
+    <property name="geometry">
+     <rect>
+      <x>669</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_a6">
+    <property name="geometry">
+     <rect>
+      <x>689</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_b6">
+    <property name="geometry">
+     <rect>
+      <x>709</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_right_end">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>749</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>end</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_dS2">
+    <property name="geometry">
+     <rect>
+      <x>63</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_fS2">
+    <property name="geometry">
+     <rect>
+      <x>103</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_gS2">
+    <property name="geometry">
+     <rect>
+      <x>123</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_aS2">
+    <property name="geometry">
+     <rect>
+      <x>143</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_fS3">
+    <property name="geometry">
+     <rect>
+      <x>243</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_cS3">
+    <property name="geometry">
+     <rect>
+      <x>183</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_aS3">
+    <property name="geometry">
+     <rect>
+      <x>283</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_dS3">
+    <property name="geometry">
+     <rect>
+      <x>203</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_gS3">
+    <property name="geometry">
+     <rect>
+      <x>263</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_fS4">
+    <property name="geometry">
+     <rect>
+      <x>383</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_cS4">
+    <property name="geometry">
+     <rect>
+      <x>323</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_aS4">
+    <property name="geometry">
+     <rect>
+      <x>423</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_dS4">
+    <property name="geometry">
+     <rect>
+      <x>343</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_gS4">
+    <property name="geometry">
+     <rect>
+      <x>403</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_fS5">
+    <property name="geometry">
+     <rect>
+      <x>523</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_cS5">
+    <property name="geometry">
+     <rect>
+      <x>463</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_aS5">
+    <property name="geometry">
+     <rect>
+      <x>563</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_dS5">
+    <property name="geometry">
+     <rect>
+      <x>483</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_gS5">
+    <property name="geometry">
+     <rect>
+      <x>543</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_fS6">
+    <property name="geometry">
+     <rect>
+      <x>663</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_cS6">
+    <property name="geometry">
+     <rect>
+      <x>603</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_aS6">
+    <property name="geometry">
+     <rect>
+      <x>703</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_dS6">
+    <property name="geometry">
+     <rect>
+      <x>623</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_gS6">
+    <property name="geometry">
+     <rect>
+      <x>683</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_c7">
+    <property name="geometry">
+     <rect>
+      <x>729</x>
+      <y>60</y>
+      <width>20</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="piano_cS7">
+    <property name="geometry">
+     <rect>
+      <x>742</x>
+      <y>60</y>
+      <width>13</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>5</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="middle_c_arrow_label">
+    <property name="geometry">
+     <rect>
+      <x>314</x>
+      <y>164</y>
+      <width>16</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap>assets/up_arrow.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="middle_c_label">
+    <property name="geometry">
+     <rect>
+      <x>284</x>
+      <y>192</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Middle C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="octave_2_label">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>31</y>
+      <width>125</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="octave_indicator" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="octave_3_label">
+    <property name="geometry">
+     <rect>
+      <x>177</x>
+      <y>31</y>
+      <width>125</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;3&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="octave_indicator" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="octave_4_label">
+    <property name="geometry">
+     <rect>
+      <x>316</x>
+      <y>31</y>
+      <width>125</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="octave_indicator" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="octave_5_label">
+    <property name="geometry">
+     <rect>
+      <x>457</x>
+      <y>31</y>
+      <width>125</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;5&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="octave_indicator" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="octave_6_label">
+    <property name="geometry">
+     <rect>
+      <x>597</x>
+      <y>31</y>
+      <width>125</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;6&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="octave_indicator" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="octave_7_label">
+    <property name="geometry">
+     <rect>
+      <x>735</x>
+      <y>31</y>
+      <width>28</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;7&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="octave_indicator" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="octaves_label">
+    <property name="geometry">
+     <rect>
+      <x>38</x>
+      <y>10</y>
+      <width>721</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Octaves&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>7</x>
+      <y>563</y>
+      <width>781</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="disabled_color_ex_1">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>31</width>
+      <height>12</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>white</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="disabled_colors_label">
+    <property name="geometry">
+     <rect>
+      <x>68</x>
+      <y>183</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>= Disabled</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="disabled_color_ex_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>191</y>
+      <width>31</width>
+      <height>12</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="autoRepeatDelay">
+     <number>305</number>
+    </property>
+    <property name="piano_key" stdset="0">
+     <string>black</string>
+    </property>
+    <property name="note_enabled" stdset="0">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="shecret_button">
+    <property name="geometry">
+     <rect>
+      <x>29</x>
+      <y>179</y>
+      <width>33</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="shecret_button" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>7</x>
+      <y>209</y>
+      <width>781</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="gf_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>478</x>
+      <y>506</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="gf_major_display">
+    <property name="geometry">
+     <rect>
+      <x>497</x>
+      <y>474</y>
+      <width>122</width>
+      <height>78</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="gf_major_label">
+    <property name="geometry">
+     <rect>
+      <x>497</x>
+      <y>452</y>
+      <width>112</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;G♭Major (E♭Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="fs_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>398</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="fs_major_display">
+    <property name="geometry">
+     <rect>
+      <x>199</x>
+      <y>365</y>
+      <width>122</width>
+      <height>79</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fs_major_label">
+    <property name="geometry">
+     <rect>
+      <x>199</x>
+      <y>343</y>
+      <width>104</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;F♯ Major (D♯ Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="d_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>329</x>
+      <y>289</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="d_major_display">
+    <property name="geometry">
+     <rect>
+      <x>348</x>
+      <y>257</y>
+      <width>122</width>
+      <height>78</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="d_major_label">
+    <property name="geometry">
+     <rect>
+      <x>348</x>
+      <y>235</y>
+      <width>95</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;D Major (B Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="f_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>478</x>
+      <y>398</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="f_major_label">
+    <property name="geometry">
+     <rect>
+      <x>497</x>
+      <y>343</y>
+      <width>94</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;F Major (D Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="f_major_display">
+    <property name="geometry">
+     <rect>
+      <x>497</x>
+      <y>365</y>
+      <width>122</width>
+      <height>79</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="bf_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>627</x>
+      <y>398</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bf_major_label">
+    <property name="geometry">
+     <rect>
+      <x>646</x>
+      <y>343</y>
+      <width>104</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;B♭Major (G Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="bf_major_display">
+    <property name="geometry">
+     <rect>
+      <x>646</x>
+      <y>365</y>
+      <width>122</width>
+      <height>79</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="b_major_label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>343</y>
+      <width>100</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;B Major (G♯ Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="b_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>398</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="b_major_display">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>365</y>
+      <width>122</width>
+      <height>79</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="cf_major_label">
+    <property name="geometry">
+     <rect>
+      <x>646</x>
+      <y>452</y>
+      <width>114</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;C♭Major (A♭Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cf_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>627</x>
+      <y>506</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="cf_major_display">
+    <property name="geometry">
+     <rect>
+      <x>646</x>
+      <y>474</y>
+      <width>122</width>
+      <height>78</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="af_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>506</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="af_major_label">
+    <property name="geometry">
+     <rect>
+      <x>199</x>
+      <y>452</y>
+      <width>103</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;A♭Major (F Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="af_major_display">
+    <property name="geometry">
+     <rect>
+      <x>199</x>
+      <y>474</y>
+      <width>122</width>
+      <height>78</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="c_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>289</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="c_major_display">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>257</y>
+      <width>122</width>
+      <height>78</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="c_major_label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>235</y>
+      <width>96</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;C Major (A Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="df_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>329</x>
+      <y>506</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="df_major_label">
+    <property name="geometry">
+     <rect>
+      <x>348</x>
+      <y>452</y>
+      <width>113</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;D♭Major (B♭Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="df_major_display">
+    <property name="geometry">
+     <rect>
+      <x>348</x>
+      <y>474</y>
+      <width>122</width>
+      <height>78</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="ef_major_display">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>474</y>
+      <width>122</width>
+      <height>78</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ef_major_label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>452</y>
+      <width>103</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;E♭Major (C Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="ef_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>506</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cs_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>329</x>
+      <y>398</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="cs_major_display">
+    <property name="geometry">
+     <rect>
+      <x>348</x>
+      <y>365</y>
+      <width>122</width>
+      <height>79</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="cs_major_label">
+    <property name="geometry">
+     <rect>
+      <x>348</x>
+      <y>343</y>
+      <width>106</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;C♯ Major (A♯ Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="g_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>289</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="g_major_display">
+    <property name="geometry">
+     <rect>
+      <x>199</x>
+      <y>257</y>
+      <width>122</width>
+      <height>78</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="g_major_label">
+    <property name="geometry">
+     <rect>
+      <x>199</x>
+      <y>235</y>
+      <width>94</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;G Major (E Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="a_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>478</x>
+      <y>289</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="a_major_label">
+    <property name="geometry">
+     <rect>
+      <x>497</x>
+      <y>235</y>
+      <width>99</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;A Major (F♯ Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="a_major_display">
+    <property name="geometry">
+     <rect>
+      <x>497</x>
+      <y>257</y>
+      <width>122</width>
+      <height>78</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="e_major_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>627</x>
+      <y>289</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="e_major_label">
+    <property name="geometry">
+     <rect>
+      <x>646</x>
+      <y>235</y>
+      <width>99</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;E Major (C♯ Minor)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="e_major_display">
+    <property name="geometry">
+     <rect>
+      <x>646</x>
+      <y>257</y>
+      <width>122</width>
+      <height>78</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="save_button">
+    <property name="geometry">
+     <rect>
+      <x>612</x>
+      <y>583</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="quit_button">
+    <property name="geometry">
+     <rect>
+      <x>693</x>
+      <y>583</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Quit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="help_button">
+    <property name="geometry">
+     <rect>
+      <x>531</x>
+      <y>583</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Help</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="enable_chord_picking_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>32</x>
+      <y>585</y>
+      <width>136</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string extracomment="Testing"/>
+    </property>
+    <property name="text">
+     <string>Enable Chord Picking</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="clef_selection">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>584</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <item>
+     <property name="text">
+      <string>Treble</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bass</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Random</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="clef_label">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>587</y>
+      <width>24</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Clef:</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>581</y>
+      <width>16</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="enable_fake_pieces_checkbox">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>585</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string extracomment="Testing"/>
+    </property>
+    <property name="text">
+     <string>Enable Fake Pieces</string>
+    </property>
+   </widget>
+   <zorder>gf_major_checkbox</zorder>
+   <zorder>gf_major_display</zorder>
+   <zorder>gf_major_label</zorder>
+   <zorder>fs_major_checkbox</zorder>
+   <zorder>fs_major_display</zorder>
+   <zorder>fs_major_label</zorder>
+   <zorder>d_major_checkbox</zorder>
+   <zorder>d_major_display</zorder>
+   <zorder>d_major_label</zorder>
+   <zorder>f_major_checkbox</zorder>
+   <zorder>f_major_label</zorder>
+   <zorder>f_major_display</zorder>
+   <zorder>bf_major_checkbox</zorder>
+   <zorder>bf_major_label</zorder>
+   <zorder>bf_major_display</zorder>
+   <zorder>b_major_label</zorder>
+   <zorder>b_major_checkbox</zorder>
+   <zorder>b_major_display</zorder>
+   <zorder>cf_major_label</zorder>
+   <zorder>cf_major_checkbox</zorder>
+   <zorder>cf_major_display</zorder>
+   <zorder>af_major_checkbox</zorder>
+   <zorder>af_major_label</zorder>
+   <zorder>af_major_display</zorder>
+   <zorder>c_major_checkbox</zorder>
+   <zorder>c_major_display</zorder>
+   <zorder>c_major_label</zorder>
+   <zorder>df_major_checkbox</zorder>
+   <zorder>df_major_label</zorder>
+   <zorder>df_major_display</zorder>
+   <zorder>ef_major_display</zorder>
+   <zorder>ef_major_label</zorder>
+   <zorder>ef_major_checkbox</zorder>
+   <zorder>cs_major_checkbox</zorder>
+   <zorder>cs_major_display</zorder>
+   <zorder>cs_major_label</zorder>
+   <zorder>g_major_checkbox</zorder>
+   <zorder>g_major_display</zorder>
+   <zorder>g_major_label</zorder>
+   <zorder>a_major_checkbox</zorder>
+   <zorder>a_major_label</zorder>
+   <zorder>a_major_display</zorder>
+   <zorder>e_major_checkbox</zorder>
+   <zorder>e_major_label</zorder>
+   <zorder>e_major_display</zorder>
+   <zorder>piano_left_end</zorder>
+   <zorder>piano_d2</zorder>
+   <zorder>piano_f2</zorder>
+   <zorder>piano_g2</zorder>
+   <zorder>piano_a2</zorder>
+   <zorder>piano_b2</zorder>
+   <zorder>piano_c3</zorder>
+   <zorder>piano_d3</zorder>
+   <zorder>piano_e3</zorder>
+   <zorder>piano_f3</zorder>
+   <zorder>piano_g3</zorder>
+   <zorder>piano_a3</zorder>
+   <zorder>piano_b3</zorder>
+   <zorder>piano_c4</zorder>
+   <zorder>piano_d4</zorder>
+   <zorder>piano_e4</zorder>
+   <zorder>piano_f4</zorder>
+   <zorder>piano_g4</zorder>
+   <zorder>piano_a4</zorder>
+   <zorder>piano_b4</zorder>
+   <zorder>piano_c5</zorder>
+   <zorder>piano_d5</zorder>
+   <zorder>piano_e5</zorder>
+   <zorder>piano_f5</zorder>
+   <zorder>piano_g5</zorder>
+   <zorder>piano_a5</zorder>
+   <zorder>piano_b5</zorder>
+   <zorder>piano_c6</zorder>
+   <zorder>piano_d6</zorder>
+   <zorder>piano_e6</zorder>
+   <zorder>piano_f6</zorder>
+   <zorder>piano_g6</zorder>
+   <zorder>piano_a6</zorder>
+   <zorder>piano_b6</zorder>
+   <zorder>piano_right_end</zorder>
+   <zorder>piano_c7</zorder>
+   <zorder>piano_e2</zorder>
+   <zorder>middle_c_arrow_label</zorder>
+   <zorder>middle_c_label</zorder>
+   <zorder>octave_2_label</zorder>
+   <zorder>octave_3_label</zorder>
+   <zorder>octave_4_label</zorder>
+   <zorder>octave_5_label</zorder>
+   <zorder>octave_6_label</zorder>
+   <zorder>octave_7_label</zorder>
+   <zorder>octaves_label</zorder>
+   <zorder>line</zorder>
+   <zorder>disabled_color_ex_1</zorder>
+   <zorder>disabled_colors_label</zorder>
+   <zorder>disabled_color_ex_2</zorder>
+   <zorder>shecret_button</zorder>
+   <zorder>line_3</zorder>
+   <zorder>horizontalLayoutWidget</zorder>
+   <zorder>piano_aS3</zorder>
+   <zorder>piano_aS4</zorder>
+   <zorder>piano_aS2</zorder>
+   <zorder>piano_aS5</zorder>
+   <zorder>piano_aS6</zorder>
+   <zorder>piano_cS6</zorder>
+   <zorder>piano_cS3</zorder>
+   <zorder>piano_cS4</zorder>
+   <zorder>piano_cS5</zorder>
+   <zorder>piano_cS7</zorder>
+   <zorder>piano_cS2</zorder>
+   <zorder>piano_dS5</zorder>
+   <zorder>piano_dS6</zorder>
+   <zorder>piano_dS2</zorder>
+   <zorder>piano_dS4</zorder>
+   <zorder>piano_dS3</zorder>
+   <zorder>piano_fS5</zorder>
+   <zorder>piano_fS4</zorder>
+   <zorder>piano_fS6</zorder>
+   <zorder>piano_fS2</zorder>
+   <zorder>piano_fS3</zorder>
+   <zorder>piano_gS2</zorder>
+   <zorder>piano_gS6</zorder>
+   <zorder>piano_gS4</zorder>
+   <zorder>piano_gS5</zorder>
+   <zorder>piano_gS3</zorder>
+   <zorder>horizontalLayoutWidget_2</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
