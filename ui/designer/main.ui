@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>597</width>
-    <height>489</height>
+    <width>620</width>
+    <height>469</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,14 +21,8 @@
        <widget class="QLabel" name="image_container">
         <property name="minimumSize">
          <size>
-          <width>400</width>
+          <width>600</width>
           <height>400</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>16777215</height>
          </size>
         </property>
         <property name="frameShape">
@@ -101,7 +95,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="start_button">
             <property name="font">
              <font>
               <pointsize>12</pointsize>
@@ -113,7 +107,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="stop_button">
             <property name="font">
              <font>
               <pointsize>12</pointsize>
@@ -125,7 +119,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="reset_button">
             <property name="font">
              <font>
               <pointsize>12</pointsize>
@@ -154,7 +148,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
-           <widget class="QPushButton" name="pushButton_4">
+           <widget class="QPushButton" name="skip_button">
             <property name="font">
              <font>
               <pointsize>12</pointsize>
@@ -166,7 +160,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_5">
+           <widget class="QPushButton" name="settings_button">
             <property name="font">
              <font>
               <pointsize>12</pointsize>

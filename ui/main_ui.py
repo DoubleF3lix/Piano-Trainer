@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(597, 489)
+        MainWindow.resize(620, 469)
         self.start_action = QAction(MainWindow)
         self.start_action.setObjectName(u"start_action")
         self.reset_action = QAction(MainWindow)
@@ -39,8 +39,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.image_container = QLabel(self.centralwidget)
         self.image_container.setObjectName(u"image_container")
-        self.image_container.setMinimumSize(QSize(400, 400))
-        self.image_container.setMaximumSize(QSize(16777215, 16777215))
+        self.image_container.setMinimumSize(QSize(600, 400))
         self.image_container.setFrameShape(QFrame.Panel)
         self.image_container.setFrameShadow(QFrame.Sunken)
         self.image_container.setLineWidth(6)
@@ -83,23 +82,23 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.pushButton_3 = QPushButton(self.centralwidget)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setFont(font)
+        self.start_button = QPushButton(self.centralwidget)
+        self.start_button.setObjectName(u"start_button")
+        self.start_button.setFont(font)
 
-        self.horizontalLayout_2.addWidget(self.pushButton_3)
+        self.horizontalLayout_2.addWidget(self.start_button)
 
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setFont(font)
+        self.stop_button = QPushButton(self.centralwidget)
+        self.stop_button.setObjectName(u"stop_button")
+        self.stop_button.setFont(font)
 
-        self.horizontalLayout_2.addWidget(self.pushButton)
+        self.horizontalLayout_2.addWidget(self.stop_button)
 
-        self.pushButton_2 = QPushButton(self.centralwidget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setFont(font)
+        self.reset_button = QPushButton(self.centralwidget)
+        self.reset_button.setObjectName(u"reset_button")
+        self.reset_button.setFont(font)
 
-        self.horizontalLayout_2.addWidget(self.pushButton_2)
+        self.horizontalLayout_2.addWidget(self.reset_button)
 
 
         self.horizontalLayout.addLayout(self.horizontalLayout_2)
@@ -110,17 +109,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.pushButton_4 = QPushButton(self.centralwidget)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setFont(font)
+        self.skip_button = QPushButton(self.centralwidget)
+        self.skip_button.setObjectName(u"skip_button")
+        self.skip_button.setFont(font)
 
-        self.horizontalLayout_3.addWidget(self.pushButton_4)
+        self.horizontalLayout_3.addWidget(self.skip_button)
 
-        self.pushButton_5 = QPushButton(self.centralwidget)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setFont(font)
+        self.settings_button = QPushButton(self.centralwidget)
+        self.settings_button.setObjectName(u"settings_button")
+        self.settings_button.setFont(font)
 
-        self.horizontalLayout_3.addWidget(self.pushButton_5)
+        self.horizontalLayout_3.addWidget(self.settings_button)
 
 
         self.horizontalLayout.addLayout(self.horizontalLayout_3)
@@ -146,10 +145,10 @@ class Ui_MainWindow(object):
         self.image_container.setText("")
         self.tally_label.setText(QCoreApplication.translate("MainWindow", u"0/0 Correct", None))
         self.skips_label.setText(QCoreApplication.translate("MainWindow", u"0 Skips", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Start", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Skip", None))
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
+        self.start_button.setText(QCoreApplication.translate("MainWindow", u"Start", None))
+        self.stop_button.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
+        self.reset_button.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
+        self.skip_button.setText(QCoreApplication.translate("MainWindow", u"Skip", None))
+        self.settings_button.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
     # retranslateUi
 
