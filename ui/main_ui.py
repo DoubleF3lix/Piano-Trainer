@@ -8,75 +8,37 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (
-    QCoreApplication,
-    QDate,
-    QDateTime,
-    QLocale,
-    QMetaObject,
-    QObject,
-    QPoint,
-    QRect,
-    QSize,
-    QTime,
-    QUrl,
-    Qt,
-)
-from PySide6.QtGui import (
-    QAction,
-    QBrush,
-    QColor,
-    QConicalGradient,
-    QCursor,
-    QFont,
-    QFontDatabase,
-    QGradient,
-    QIcon,
-    QImage,
-    QKeySequence,
-    QLinearGradient,
-    QPainter,
-    QPalette,
-    QPixmap,
-    QRadialGradient,
-    QTransform,
-)
-from PySide6.QtWidgets import (
-    QApplication,
-    QComboBox,
-    QFrame,
-    QHBoxLayout,
-    QLabel,
-    QMainWindow,
-    QMenu,
-    QMenuBar,
-    QPushButton,
-    QSizePolicy,
-    QSpacerItem,
-    QVBoxLayout,
-    QWidget,
-)
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
+    QCursor, QFont, QFontDatabase, QGradient,
+    QIcon, QImage, QKeySequence, QLinearGradient,
+    QPainter, QPalette, QPixmap, QRadialGradient,
+    QTransform)
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
+    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
-            MainWindow.setObjectName("MainWindow")
+            MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(597, 489)
         self.start_action = QAction(MainWindow)
-        self.start_action.setObjectName("start_action")
+        self.start_action.setObjectName(u"start_action")
         self.reset_action = QAction(MainWindow)
-        self.reset_action.setObjectName("reset_action")
+        self.reset_action.setObjectName(u"reset_action")
         self.stop_action = QAction(MainWindow)
-        self.stop_action.setObjectName("stop_action")
+        self.stop_action.setObjectName(u"stop_action")
         self.centralwidget = QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
+        self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_4 = QVBoxLayout(self.centralwidget)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout = QVBoxLayout()
-        self.verticalLayout.setObjectName("verticalLayout")
+        self.verticalLayout.setObjectName(u"verticalLayout")
         self.image_container = QLabel(self.centralwidget)
-        self.image_container.setObjectName("image_container")
+        self.image_container.setObjectName(u"image_container")
         self.image_container.setMinimumSize(QSize(400, 400))
         self.image_container.setMaximumSize(QSize(16777215, 16777215))
         self.image_container.setFrameShape(QFrame.Panel)
@@ -86,16 +48,16 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.image_container)
 
         self.line_3 = QFrame(self.centralwidget)
-        self.line_3.setObjectName("line_3")
+        self.line_3.setObjectName(u"line_3")
         self.line_3.setFrameShape(QFrame.HLine)
         self.line_3.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout.addWidget(self.line_3)
 
         self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.tally_label = QLabel(self.centralwidget)
-        self.tally_label.setObjectName("tally_label")
+        self.tally_label.setObjectName(u"tally_label")
         font = QFont()
         font.setPointSize(12)
         self.tally_label.setFont(font)
@@ -103,128 +65,91 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.tally_label)
 
         self.line = QFrame(self.centralwidget)
-        self.line.setObjectName("line")
+        self.line.setObjectName(u"line")
         self.line.setFrameShape(QFrame.VLine)
         self.line.setFrameShadow(QFrame.Sunken)
 
         self.horizontalLayout.addWidget(self.line)
 
         self.skips_label = QLabel(self.centralwidget)
-        self.skips_label.setObjectName("skips_label")
+        self.skips_label.setObjectName(u"skips_label")
         self.skips_label.setFont(font)
 
         self.horizontalLayout.addWidget(self.skips_label)
 
-        self.horizontalSpacer_3 = QSpacerItem(
-            40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum
-        )
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.pushButton_3 = QPushButton(self.centralwidget)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setFont(font)
+
+        self.horizontalLayout_2.addWidget(self.pushButton_3)
+
+        self.pushButton = QPushButton(self.centralwidget)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setFont(font)
+
+        self.horizontalLayout_2.addWidget(self.pushButton)
+
+        self.pushButton_2 = QPushButton(self.centralwidget)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setFont(font)
+
+        self.horizontalLayout_2.addWidget(self.pushButton_2)
+
+
+        self.horizontalLayout.addLayout(self.horizontalLayout_2)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_3)
 
-        self.clef_label = QLabel(self.centralwidget)
-        self.clef_label.setObjectName("clef_label")
-        self.clef_label.setFont(font)
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.pushButton_4 = QPushButton(self.centralwidget)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setFont(font)
 
-        self.horizontalLayout.addWidget(self.clef_label)
+        self.horizontalLayout_3.addWidget(self.pushButton_4)
 
-        self.clef_selection = QComboBox(self.centralwidget)
-        self.clef_selection.addItem("")
-        self.clef_selection.addItem("")
-        self.clef_selection.addItem("")
-        self.clef_selection.setObjectName("clef_selection")
-        self.clef_selection.setFont(font)
+        self.pushButton_5 = QPushButton(self.centralwidget)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.pushButton_5.setFont(font)
 
-        self.horizontalLayout.addWidget(self.clef_selection)
+        self.horizontalLayout_3.addWidget(self.pushButton_5)
 
-        self.line_4 = QFrame(self.centralwidget)
-        self.line_4.setObjectName("line_4")
-        self.line_4.setFrameShape(QFrame.VLine)
-        self.line_4.setFrameShadow(QFrame.Sunken)
 
-        self.horizontalLayout.addWidget(self.line_4)
+        self.horizontalLayout.addLayout(self.horizontalLayout_3)
 
-        self.settings_button = QPushButton(self.centralwidget)
-        self.settings_button.setObjectName("settings_button")
-        self.settings_button.setFont(font)
-
-        self.horizontalLayout.addWidget(self.settings_button)
-
-        self.skip_button = QPushButton(self.centralwidget)
-        self.skip_button.setObjectName("skip_button")
-        self.skip_button.setEnabled(True)
-        font1 = QFont()
-        font1.setPointSize(12)
-        font1.setBold(False)
-        font1.setUnderline(False)
-        font1.setStrikeOut(False)
-        font1.setKerning(True)
-        self.skip_button.setFont(font1)
-        self.skip_button.setAutoFillBackground(False)
-        self.skip_button.setCheckable(False)
-
-        self.horizontalLayout.addWidget(self.skip_button)
 
         self.verticalLayout.addLayout(self.horizontalLayout)
+
 
         self.verticalLayout_4.addLayout(self.verticalLayout)
 
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menuBar = QMenuBar(MainWindow)
-        self.menuBar.setObjectName("menuBar")
-        self.menuBar.setGeometry(QRect(0, 0, 597, 22))
-        self.menuStart = QMenu(self.menuBar)
-        self.menuStart.setObjectName("menuStart")
-        MainWindow.setMenuBar(self.menuBar)
-
-        self.menuBar.addAction(self.menuStart.menuAction())
-        self.menuStart.addAction(self.start_action)
-        self.menuStart.addAction(self.stop_action)
-        self.menuStart.addAction(self.reset_action)
 
         self.retranslateUi(MainWindow)
 
         QMetaObject.connectSlotsByName(MainWindow)
-
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(
-            QCoreApplication.translate("MainWindow", "MainWindow", None)
-        )
-        self.start_action.setText(
-            QCoreApplication.translate("MainWindow", "Start", None)
-        )
-        self.reset_action.setText(
-            QCoreApplication.translate("MainWindow", "Reset", None)
-        )
-        self.stop_action.setText(QCoreApplication.translate("MainWindow", "Stop", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        self.start_action.setText(QCoreApplication.translate("MainWindow", u"Start", None))
+        self.reset_action.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
+        self.stop_action.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
         self.image_container.setText("")
-        self.tally_label.setText(
-            QCoreApplication.translate("MainWindow", "0/0 Correct", None)
-        )
-        self.skips_label.setText(
-            QCoreApplication.translate("MainWindow", "0 Skips", None)
-        )
-        self.clef_label.setText(QCoreApplication.translate("MainWindow", "Clef:", None))
-        self.clef_selection.setItemText(
-            0, QCoreApplication.translate("MainWindow", "Bass", None)
-        )
-        self.clef_selection.setItemText(
-            1, QCoreApplication.translate("MainWindow", "Treble", None)
-        )
-        self.clef_selection.setItemText(
-            2, QCoreApplication.translate("MainWindow", "Random", None)
-        )
-
-        self.settings_button.setText(
-            QCoreApplication.translate("MainWindow", "Settings", None)
-        )
-        self.skip_button.setText(QCoreApplication.translate("MainWindow", "Skip", None))
-        # if QT_CONFIG(shortcut)
-        self.skip_button.setShortcut(
-            QCoreApplication.translate("MainWindow", "S", None)
-        )
-        # endif // QT_CONFIG(shortcut)
-        self.menuStart.setTitle(QCoreApplication.translate("MainWindow", "Menu", None))
-
+        self.tally_label.setText(QCoreApplication.translate("MainWindow", u"0/0 Correct", None))
+        self.skips_label.setText(QCoreApplication.translate("MainWindow", u"0 Skips", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Start", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
+        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Skip", None))
+        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
     # retranslateUi
+
