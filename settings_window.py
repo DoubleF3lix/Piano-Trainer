@@ -1,13 +1,15 @@
+from __future__ import annotations
+
 import contextlib
 import json
 import os
-import sys
 import typing
 
 from PySide6 import QtCore, QtGui, QtWidgets
 from PySide6.QtSvgWidgets import QGraphicsSvgItem
 from PySide6.QtWidgets import QGraphicsScene, QGraphicsView, QMainWindow
 
+# I love circular imports :))))))))))))
 if typing.TYPE_CHECKING:
     from main_window import MainWindow
 
@@ -60,7 +62,8 @@ class SettingsWindow(QMainWindow):
 
         self.installEventFilter(self)
 
-        # TODO load state into checkboxes
+        for key_signature, value in existing_settings["key_signatures"].items():
+            getattr(self.ui, f"{key_signature}_major_checkbox").setChecked(value)
 
         # Miscellaneous components
         self.ui.shecret_button.clicked.connect(self.funny_easter_egg)
@@ -88,7 +91,7 @@ class SettingsWindow(QMainWindow):
                 svg_display.setScene(scene)
 
     # I regret nothing
-    def funny_easter_egg(self) -> None:
+    def funny_easter_egg(self) -> None:  # sourcery skip: class-extract-method
         msg_box = QtWidgets.QMessageBox()
         msg_box.setWindowTitle(
             "I put this here on June 19th, 2022 at 10:09 PM and will now promptly forget it exists"

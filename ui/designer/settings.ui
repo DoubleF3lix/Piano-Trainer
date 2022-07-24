@@ -2210,6 +2210,14 @@ QPushButton[shecret_button=&quot;true&quot;] {
      <string>Enable Fake Pieces</string>
     </property>
    </widget>
+   <zorder>save_button</zorder>
+   <zorder>quit_button</zorder>
+   <zorder>help_button</zorder>
+   <zorder>enable_chord_picking_checkbox</zorder>
+   <zorder>clef_selection</zorder>
+   <zorder>clef_label</zorder>
+   <zorder>line_2</zorder>
+   <zorder>enable_fake_pieces_checkbox</zorder>
    <zorder>gf_major_checkbox</zorder>
    <zorder>gf_major_display</zorder>
    <zorder>gf_major_label</zorder>
@@ -2307,7 +2315,6 @@ QPushButton[shecret_button=&quot;true&quot;] {
    <zorder>disabled_color_ex_2</zorder>
    <zorder>shecret_button</zorder>
    <zorder>line_3</zorder>
-   <zorder>horizontalLayoutWidget</zorder>
    <zorder>piano_aS3</zorder>
    <zorder>piano_aS4</zorder>
    <zorder>piano_aS2</zorder>
@@ -2334,7 +2341,6 @@ QPushButton[shecret_button=&quot;true&quot;] {
    <zorder>piano_gS4</zorder>
    <zorder>piano_gS5</zorder>
    <zorder>piano_gS3</zorder>
-   <zorder>horizontalLayoutWidget_2</zorder>
   </widget>
  </widget>
  <resources/>
