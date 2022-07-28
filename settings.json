@@ -81,5 +81,10 @@
     },
     "chord_picking_enabled": false,
     "fake_pieces_enabled": false,
-    "clef": "Treble"
+    "clef": "Treble",
+    "DEBUG": {
+        "INSTANTLY_OPEN_SETTNIGS_WINDOW": false,
+        "IS_RUNNING_PYTHON": false,
+        "OPEN_DIALOG_ON_ERROR": false
+    }
 }

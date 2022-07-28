@@ -6,19 +6,12 @@ from ui.main_ui import Ui_MainWindow
 
 
 class MainWindow(QMainWindow):
-    def __init__(self, DEBUG: dict = None):
-        self.DEBUG = DEBUG
-
-        self.FileAccessAPI = FileAccessAPI(DEBUG)
+    def __init__(self):
+        self.FileAccessAPI: FileAccessAPI = FileAccessAPI()
 
         super().__init__()
         self.ui: Ui_MainWindow = Ui_MainWindow()
         self.ui.setupUi(self)
-
-        # Menu bar
-        self.ui.start_action.triggered.connect(self.start_action_triggered)
-        self.ui.stop_action.triggered.connect(self.stop_action_triggered)
-        self.ui.reset_action.triggered.connect(self.reset_action_triggered)
 
         # Buttons
         self.ui.settings_button.clicked.connect(self.settings_button_clicked)
@@ -31,7 +24,7 @@ class MainWindow(QMainWindow):
         # self.ui.tally_label.text()
         # self.ui.skips_label.text()
 
-        if self.DEBUG and self.DEBUG["INSTA_OPEN_SETTINGS"]:
+        if self.FileAccessAPI.get_debug_setting("INSTANTLY_OPEN_SETTINGS_WINDOW"):
             self.settings_button_clicked()
 
     def start_action_triggered(self):
