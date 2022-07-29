@@ -1,19 +1,20 @@
 from __future__ import annotations
 
 import contextlib
-import json
 import os
 import typing
 
 from PySide6 import QtCore, QtGui, QtWidgets
 from PySide6.QtSvgWidgets import QGraphicsSvgItem
 from PySide6.QtWidgets import QGraphicsScene, QGraphicsView, QMainWindow
+from PySide6.QtGui import QShortcut, QKeySequence
 
 # I love circular imports :))))))))))))
 if typing.TYPE_CHECKING:
     from main_window import MainWindow
 
 from ui.settings_ui import Ui_SettingsWindow
+from debug_window import DebugWindow
 
 
 class SettingsWindow(QMainWindow):
@@ -67,7 +68,7 @@ class SettingsWindow(QMainWindow):
         self.ui.shecret_button.clicked.connect(self.funny_easter_egg)
         self.ui.help_button.clicked.connect(self.display_help)
         self.ui.save_button.clicked.connect(lambda: self.save_settings(True))
-        self.ui.quit_button.clicked.connect(lambda: self.close())
+        self.ui.quit_button.clicked.connect(self.close)
 
         svg_root: str = os.path.join("assets", "key_signatures")
         for file in os.listdir(svg_root):
@@ -85,6 +86,11 @@ class SettingsWindow(QMainWindow):
                 scene: QGraphicsScene = QGraphicsScene()
                 scene.addItem(svg_item)
                 svg_display.setScene(scene)
+
+        open_debug_shortcut: QShortcut = QShortcut(QKeySequence("Ctrl+Shift+D"), self)
+        open_debug_shortcut.activated.connect(self.open_debug_window)
+
+        self.debug_window: DebugWindow = DebugWindow(self)
 
     # I regret nothing
     def funny_easter_egg(self) -> None:  # sourcery skip: class-extract-method
@@ -221,3 +227,6 @@ class SettingsWindow(QMainWindow):
 
             elif msg_box.clickedButton().text() == "Discard":
                 event.accept()
+
+    def open_debug_window(self):
+        self.debug_window.show()
