@@ -1,6 +1,5 @@
 import json
 import os
-import sys
 
 from PySide6.QtCore import QCoreApplication
 from PySide6.QtWidgets import QMessageBox
@@ -19,7 +18,7 @@ class FileAccessAPI:
     def get_install_path(self) -> str:
         return (
             os.getcwd()
-            if self.get_debug_setting("IS_RUNNING_PYTHON")
+            if os.path.isfile(os.path.join(os.getcwd(), "IS_PY"))
             else QCoreApplication.applicationDirPath()
         )
 
@@ -38,15 +37,14 @@ class FileAccessAPI:
                 "fake_pieces_enabled": False,
                 "clef": "Treble",
                 "DEBUG": {
-                    "INSTANTLY_OPEN_SETTNIGS_WINDOW": False,
-                    "IS_RUNNING_PYTHON": False,
+                    "INSTANTLY_OPEN_SETTINGS_WINDOW": False,
                     "OPEN_DIALOG_ON_ERROR": False,
                 }
             }, outfile, indent=4)
             # fmt: on
 
     # Load the settings into a file
-    def save_settings(self, data, show_success_prompt: bool) -> None:
+    def save_settings(self, data: dict, show_success_prompt: bool) -> None:
         with open(self.settings_file_path, "w") as outfile:
             json.dump(data, outfile, indent=4)
 
@@ -57,9 +55,12 @@ class FileAccessAPI:
             msg_box.exec()
 
     # Load the settings from a file
-    def load_settings(self) -> dict:
+    def load_settings(self, discard_debug: bool = False) -> dict:
         with open(self.settings_file_path, "r") as infile:
-            return json.load(infile)
+            contents = json.load(infile)
+        if discard_debug:
+            del contents["DEBUG"]
+        return contents
 
     def get_setting(self, setting: str) -> bool | str:
         if "/" in setting:

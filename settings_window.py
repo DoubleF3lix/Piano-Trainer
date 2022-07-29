@@ -20,8 +20,6 @@ class SettingsWindow(QMainWindow):
     def __init__(self, parent: MainWindow = None):
         self.parent: MainWindow = parent
 
-        self.SETTINGS_FILE_PATH = self.parent.FileAccessAPI.SETTINGS_FILE_PATH
-
         # Check if a settings file exists, and if so load the config from it
         existing_settings: dict = self.parent.FileAccessAPI.load_settings()
         self.enabled_notes: dict = existing_settings["enabled_notes"]
@@ -68,9 +66,7 @@ class SettingsWindow(QMainWindow):
         # Miscellaneous components
         self.ui.shecret_button.clicked.connect(self.funny_easter_egg)
         self.ui.help_button.clicked.connect(self.display_help)
-        self.ui.save_button.clicked.connect(
-            lambda: self.save_settings(show_success_prompt=True)
-        )
+        self.ui.save_button.clicked.connect(lambda: self.save_settings(True))
         self.ui.quit_button.clicked.connect(lambda: self.close())
 
         svg_root: str = os.path.join("assets", "key_signatures")
@@ -190,21 +186,19 @@ class SettingsWindow(QMainWindow):
             "clef": self.ui.clef_selection.currentText(),
         }
 
-    # Load the settings into a file
-    def save_settings(self, show_success_prompt: bool) -> None:
-        with open(self.SETTINGS_FILE_PATH, "w") as outfile:
-            json.dump(self.convert_state_to_output(), outfile, indent=4)
-
-        if show_success_prompt:
-            msg_box = QtWidgets.QMessageBox()
-            msg_box.setWindowTitle("Save Settings")
-            msg_box.setText("Settings successfully saved!")
-            msg_box.exec()
+    def save_settings(self, show_success_prompt: bool):
+        self.parent.FileAccessAPI.save_settings(
+            self.parent.FileAccessAPI.load_settings() | self.convert_state_to_output(),
+            show_success_prompt=show_success_prompt,
+        )
 
     # Handle unsaved changes
     def closeEvent(self, event: QtGui.QCloseEvent) -> None:
         # Make sure the user actually made changes before asking them if they want to save
-        if self.parent.FileAccessAPI.load_settings() != self.convert_state_to_output():
+        if (
+            self.parent.FileAccessAPI.load_settings(True)
+            != self.convert_state_to_output()
+        ):
             msg_box: QtWidgets.QMessageBox = QtWidgets.QMessageBox()
             msg_box.setIcon(QtWidgets.QMessageBox.Warning)
             msg_box.setWindowTitle("Save Settings?")
@@ -222,7 +216,7 @@ class SettingsWindow(QMainWindow):
                 event.ignore()
 
             elif msg_box.clickedButton().text() == "Save":
-                self.save_settings(show_success_prompt=False)
+                self.save_settings(False)
                 event.accept()
 
             elif msg_box.clickedButton().text() == "Discard":

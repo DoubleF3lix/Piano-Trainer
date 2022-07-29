@@ -75,7 +75,7 @@
         "bf": false,
         "ef": false,
         "af": false,
-        "df": false,
+        "df": true,
         "gf": false,
         "cf": false
     },
@@ -83,8 +83,7 @@
     "fake_pieces_enabled": false,
     "clef": "Treble",
     "DEBUG": {
-        "INSTANTLY_OPEN_SETTNIGS_WINDOW": false,
-        "IS_RUNNING_PYTHON": false,
+        "INSTANTLY_OPEN_SETTINGS_WINDOW": true,
         "OPEN_DIALOG_ON_ERROR": false
     }
 }

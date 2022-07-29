@@ -93,24 +93,11 @@
      <string>Instantly Open Settings</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="is_running_python_checkbox">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>36</y>
-      <width>120</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Is Running Python</string>
-    </property>
-   </widget>
    <widget class="QCheckBox" name="open_dialog_on_error_checkbox">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>62</y>
+      <y>40</y>
       <width>136</width>
       <height>20</height>
      </rect>
