@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "python",
+            "request": "launch",
+            "name": "Run",
+            "program": "main.py"
+        },
+        {
+            "type": "python",
+            "request": "launch",
+            "name": "Compile UIs",
+            "program": "ui/designer/compile_uis.py"
+        }
+    ]
+}

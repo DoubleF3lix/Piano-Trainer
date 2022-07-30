@@ -24,24 +24,19 @@ class MainWindow(QMainWindow):
         # self.ui.tally_label.text()
         # self.ui.skips_label.text()
 
+        self.settings_window: SettingsWindow = SettingsWindow(self)
+
         if self.FileAccessAPI.get_debug_setting("INSTANTLY_OPEN_SETTINGS_WINDOW"):
             self.settings_button_clicked()
 
-    def start_action_triggered(self):
-        print("Start action triggered")
-
-    def stop_action_triggered(self):
-        print("Stop action triggered")
-
-    def reset_action_triggered(self):
-        print("Reset action triggered")
+        if self.FileAccessAPI.get_debug_setting("INSTANTLY_OPEN_NOTE_DEBUGGER_WINDOW"):
+            self.settings_window.debug_window.note_debugger_window.show()
 
     def settings_button_clicked(self):
-        settings_window: SettingsWindow = SettingsWindow(self)
-        settings_window.show()
+        self.settings_window.show()
 
     def skip_button_clicked(self):
-        print("Skip button clicked")
+        ...
 
 
 # other lilypond notes:

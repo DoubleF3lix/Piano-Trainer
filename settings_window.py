@@ -4,17 +4,32 @@ import contextlib
 import os
 import typing
 
-from PySide6 import QtCore, QtGui, QtWidgets
+from PySide6.QtCore import QEvent, QObject, QPoint, QRect, Qt
+from PySide6.QtGui import (
+    QCloseEvent,
+    QCursor,
+    QHoverEvent,
+    QKeySequence,
+    QMouseEvent,
+    QShortcut,
+)
 from PySide6.QtSvgWidgets import QGraphicsSvgItem
-from PySide6.QtWidgets import QGraphicsScene, QGraphicsView, QMainWindow
-from PySide6.QtGui import QShortcut, QKeySequence
+from PySide6.QtWidgets import (
+    QGraphicsScene,
+    QGraphicsView,
+    QMainWindow,
+    QMessageBox,
+    QPushButton,
+)
+
+from util import make_message_box
 
 # I love circular imports :))))))))))))
 if typing.TYPE_CHECKING:
     from main_window import MainWindow
 
-from ui.settings_ui import Ui_SettingsWindow
 from debug_window import DebugWindow
+from ui.settings_ui import Ui_SettingsWindow
 
 
 class SettingsWindow(QMainWindow):
@@ -27,7 +42,7 @@ class SettingsWindow(QMainWindow):
 
         # Functionality for note configuration
         self.is_holding_click: bool = False
-        self.note_widget_geometries: dict[str, QtCore.QRect] = {}
+        self.note_widget_geometries: dict[str, QRect] = {}
         self.toggled_notes: list[str] = []
 
         # Initialize the UI itself
@@ -43,7 +58,7 @@ class SettingsWindow(QMainWindow):
 
         # Loop through all the note buttons
         for note, value in self.enabled_notes.items():
-            note_widget: QtWidgets.QPushButton = getattr(self.ui, f"piano_{note}")
+            note_widget: QPushButton = getattr(self.ui, f"piano_{note}")
 
             # Set note state to saved value
             note_widget.setProperty("note_enabled", value)
@@ -94,28 +109,22 @@ class SettingsWindow(QMainWindow):
 
     # I regret nothing
     def funny_easter_egg(self) -> None:  # sourcery skip: class-extract-method
-        msg_box = QtWidgets.QMessageBox()
-        msg_box.setWindowTitle(
-            "I put this here on June 19th, 2022 at 10:09 PM and will now promptly forget it exists"
+        make_message_box(
+            "I put this here on June 19th, 2022 at 10:09 PM and will now promptly forget it exists",
+            "The Game is a game, of which the sole object is to not remember that you are playing it. As soon as you remember that it exists, you have lost and must start again.\n\nWith that, you lose! :)",
         )
-        msg_box.setText(
-            "The Game is a game, of which the sole object is to not remember that you are playing it. As soon as you remember that it exists, you have lost and must start again.\n\nWith that, you lose! :)"
-        )
-        msg_box.exec()
 
     def display_help(self) -> None:
-        msg_box: QtWidgets.QMessageBox = QtWidgets.QMessageBox()
-        msg_box.setIcon(QtWidgets.QMessageBox.Information)
-        msg_box.setWindowTitle("Settings Help")
-        msg_box.setText(
-            '"Note Configuration" allows you to choose what notes you want to practice.\nA note highlighted in red means it will not be selected for practice.\nYou can click on each note individually, or you can click and drag over multiple notes to toggle several at a time.\nFor technical reasons, only C#2 to C#7 are supported.\n\n"Enable Chord Picking" will allow multiple notes to appear, where you have to play one of the notes highlighted in green.\n\n"Clef" lets you configure which clef you want to practice. Selecting "Random" will randomly pick between the two every round.'
+        make_message_box(
+            "Settings Help",
+            '"Note Configuration" allows you to choose what notes you want to practice.\nA note highlighted in red means it will not be selected for practice.\nYou can click on each note individually, or you can click and drag over multiple notes to toggle several at a time.\nFor technical reasons, only C#2 to C#7 are supported.\n\n"Enable Chord Picking" will allow multiple notes to appear, where you have to play one of the notes highlighted in green.\n\n"Clef" lets you configure which clef you want to practice. Selecting "Random" will randomly pick between the two every round.',
+            icon=QMessageBox.Information,
+            buttons=QMessageBox.Ok,
         )
-        msg_box.setStandardButtons(QtWidgets.QMessageBox.Ok)
-        msg_box.exec()
 
     # Toggle the note enabled state
     def invert_note_state(self, note):
-        note_widget: QtWidgets.QPushButton = getattr(self.ui, f"piano_{note}")
+        note_widget: QPushButton = getattr(self.ui, f"piano_{note}")
         note_widget.setProperty(
             "note_enabled", not note_widget.property("note_enabled")
         )
@@ -125,9 +134,9 @@ class SettingsWindow(QMainWindow):
         self.enabled_notes[note] = not self.enabled_notes[note]
 
     # Checks what note the user is hovering over
-    def get_selected_notes(self, event_pos: QtCore.QPoint) -> None:
+    def get_selected_notes(self, event_pos: QPoint) -> None:
         # Loop through the geometries of all the note widgets and check which ones we might be hovering over based on mouse position
-        potential_notes_selected: list[list[str, QtCore.QRect]] = [
+        potential_notes_selected: list[list[str, QRect]] = [
             [note, note_widget_geometry]
             for note, note_widget_geometry in self.note_widget_geometries.items()
             if note_widget_geometry.contains(event_pos)
@@ -148,20 +157,20 @@ class SettingsWindow(QMainWindow):
                 self.invert_note_state(selected_note[0])
                 self.toggled_notes.append(selected_note[0])
 
-    def mousePressEvent(self, event: QtGui.QMouseEvent) -> None:
-        if event.button() == QtCore.Qt.LeftButton:
+    def mousePressEvent(self, event: QMouseEvent) -> None:
+        if event.button() == Qt.LeftButton:
             self.is_holding_click = True
             # Allows you to toggle notes by a single click
-            self.get_selected_notes(self.mapFromGlobal(QtGui.QCursor.pos()))
+            self.get_selected_notes(self.mapFromGlobal(QCursor.pos()))
 
-    def mouseReleaseEvent(self, event: QtGui.QMouseEvent) -> None:
-        if event.button() == QtCore.Qt.LeftButton:
+    def mouseReleaseEvent(self, event: QMouseEvent) -> None:
+        if event.button() == Qt.LeftButton:
             self.is_holding_click = False
             self.toggled_notes = []
 
     # Allows you to toggle notes by click dragging
-    def eventFilter(self, obj: QtCore.QObject, event: QtGui.QHoverEvent) -> bool:
-        if event.type() == QtCore.QEvent.HoverMove and self.is_holding_click:
+    def eventFilter(self, obj: QObject, event: QHoverEvent) -> bool:
+        if event.type() == QEvent.HoverMove and self.is_holding_click:
             self.get_selected_notes(event.pos())
 
         return False
@@ -199,24 +208,18 @@ class SettingsWindow(QMainWindow):
         )
 
     # Handle unsaved changes
-    def closeEvent(self, event: QtGui.QCloseEvent) -> None:
+    def closeEvent(self, event: QCloseEvent) -> None:
         # Make sure the user actually made changes before asking them if they want to save
         if (
             self.parent.FileAccessAPI.load_settings(True)
             != self.convert_state_to_output()
         ):
-            msg_box: QtWidgets.QMessageBox = QtWidgets.QMessageBox()
-            msg_box.setIcon(QtWidgets.QMessageBox.Warning)
-            msg_box.setWindowTitle("Save Settings?")
-            msg_box.setText(
-                "You have unsaved settings. Do you want to save them?\nIf you don't save, your settings will be lost."
+            msg_box: QMessageBox = make_message_box(
+                "Save Settings?",
+                "You have unsaved settings. Do you want to save them?\nIf you don't save, your settings will be lost.",
+                icon=QMessageBox.Warning,
+                buttons=QMessageBox.Save | QMessageBox.Discard | QMessageBox.Cancel,
             )
-            msg_box.setStandardButtons(
-                QtWidgets.QMessageBox.Save
-                | QtWidgets.QMessageBox.Discard
-                | QtWidgets.QMessageBox.Cancel
-            )
-            msg_box.exec()
 
             if msg_box.clickedButton().text() == "Cancel":
                 event.ignore()

@@ -2,7 +2,7 @@ import aubio
 import numpy
 import pyaudio as pya
 
-from util.find_note import DataCollector, frequency_to_note
+from future_stuff.find_note import DataCollector, frequency_to_note
 
 pyaudio = pya.PyAudio()
 

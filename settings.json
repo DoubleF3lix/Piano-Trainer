@@ -84,6 +84,6 @@
     "clef": "Treble",
     "DEBUG": {
         "INSTANTLY_OPEN_SETTINGS_WINDOW": true,
-        "OPEN_DIALOG_ON_ERROR": false
+        "INSTANTLY_OPEN_NOTE_DEBUGGER_WINDOW": true
     }
 }

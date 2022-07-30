@@ -9,12 +9,10 @@ class FileAccessAPI:
     def __init__(self):
         self.install_path: str = self.get_install_path()
         self.settings_file_path: str = os.path.join(self.install_path, "settings.json")
-        print(self.install_path, self.settings_file_path)
         self.assets_path: str = os.path.join(self.install_path, "assets")
 
         self.create_settings_file_if_needed()
 
-    # TODO this is broken because the file needs to exist to get the debug setting which reports the file path, fix
     def get_install_path(self) -> str:
         return (
             os.getcwd()
@@ -38,7 +36,7 @@ class FileAccessAPI:
                 "clef": "Treble",
                 "DEBUG": {
                     "INSTANTLY_OPEN_SETTINGS_WINDOW": False,
-                    "OPEN_DIALOG_ON_ERROR": False,
+                    "INSTANTLY_OPEN_NOTE_DEBUGGER_WINDOW": False,
                 }
             }, outfile, indent=4)
             # fmt: on
@@ -55,12 +53,14 @@ class FileAccessAPI:
             msg_box.exec()
 
     # Load the settings from a file
-    def load_settings(self, discard_debug: bool = False) -> dict:
+    def load_settings(
+        self, discard_debug: bool = False, as_string: bool = False
+    ) -> dict:
         with open(self.settings_file_path, "r") as infile:
             contents = json.load(infile)
         if discard_debug:
             del contents["DEBUG"]
-        return contents
+        return json.dumps(contents, indent=4) if as_string else contents
 
     def get_setting(self, setting: str) -> bool | str:
         if "/" in setting:
