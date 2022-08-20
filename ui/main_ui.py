@@ -16,9 +16,9 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QGraphicsView, QHBoxLayout,
+    QLabel, QMainWindow, QPushButton, QSizePolicy,
+    QSpacerItem, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -37,14 +37,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.image_container = QLabel(self.centralwidget)
-        self.image_container.setObjectName(u"image_container")
-        self.image_container.setMinimumSize(QSize(600, 400))
-        self.image_container.setFrameShape(QFrame.Panel)
-        self.image_container.setFrameShadow(QFrame.Sunken)
-        self.image_container.setLineWidth(6)
+        self.music_display = QGraphicsView(self.centralwidget)
+        self.music_display.setObjectName(u"music_display")
+        self.music_display.setMinimumSize(QSize(0, 400))
 
-        self.verticalLayout.addWidget(self.image_container)
+        self.verticalLayout.addWidget(self.music_display)
 
         self.line_3 = QFrame(self.centralwidget)
         self.line_3.setObjectName(u"line_3")
@@ -138,11 +135,10 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Piano Trainer", None))
         self.start_action.setText(QCoreApplication.translate("MainWindow", u"Start", None))
         self.reset_action.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
         self.stop_action.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
-        self.image_container.setText("")
         self.tally_label.setText(QCoreApplication.translate("MainWindow", u"0/0 Correct", None))
         self.skips_label.setText(QCoreApplication.translate("MainWindow", u"0 Skips", None))
         self.start_button.setText(QCoreApplication.translate("MainWindow", u"Start", None))

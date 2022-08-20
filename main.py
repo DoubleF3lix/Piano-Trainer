@@ -25,3 +25,9 @@ sys.excepthook = catch_exception
 window = MainWindow()
 window.show()
 app.exec()
+
+# TODO attempt to fix "QObject::killTimer: Timers cannot be stopped from another thread"
+# TODO link note detection to the debug window
+# TODO pyinstaller
+# TODO make installer
+# TODO download all lilypond binaries and swap it for 2.23 per the mailing list

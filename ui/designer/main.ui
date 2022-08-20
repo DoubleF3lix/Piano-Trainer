@@ -11,31 +11,19 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Piano Trainer</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QLabel" name="image_container">
+       <widget class="QGraphicsView" name="music_display">
         <property name="minimumSize">
          <size>
-          <width>600</width>
+          <width>0</width>
           <height>400</height>
          </size>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::Panel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Sunken</enum>
-        </property>
-        <property name="lineWidth">
-         <number>6</number>
-        </property>
-        <property name="text">
-         <string/>
         </property>
        </widget>
       </item>

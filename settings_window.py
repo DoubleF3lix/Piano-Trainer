@@ -197,7 +197,6 @@ class SettingsWindow(QMainWindow):
                 "cf": self.ui.cf_major_checkbox.isChecked(),
             },
             "chord_picking_enabled": self.ui.enable_chord_picking_checkbox.isChecked(),
-            "fake_pieces_enabled": self.ui.enable_fake_pieces_checkbox.isChecked(),
             "clef": self.ui.clef_selection.currentText(),
         }
 
