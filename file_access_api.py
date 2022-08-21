@@ -94,9 +94,10 @@ class FileAccessAPI:
         with open(self.get_asset_path("lp_temp/file.ly"), "w") as outfile:
             outfile.write(contents)
 
-        os.chdir(self.get_asset_path("lp_temp"))
-        os.system(
-            f'"{self.get_asset_path("lilypond/windows/usr/bin/lilypond.exe")}" --loglevel=NONE --svg -dcrop file.ly'
+        subprocess.call(
+            f'"{self.get_asset_path("lilypond/windows/bin/lilypond.exe")}" --loglevel=NONE --svg -dcrop file.ly',
+            cwd=self.get_asset_path("lp_temp"),
+            shell=True,
         )
 
         return self.get_asset_path("lp_temp/file.cropped.svg")
