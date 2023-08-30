@@ -1409,7 +1409,7 @@ QPushButton[shecret_button=&quot;true&quot;] {
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;7&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;7 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="octave_indicator" stdset="0">
      <bool>true</bool>
@@ -1557,6 +1557,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <height>78</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: G♭, A♭, B♭, C♭, D♭, E♭, F&lt;br/&gt;Minor: E♭, F, G♭, A♭, B♭, C♭, D♭&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
    </widget>
    <widget class="QLabel" name="gf_major_label">
     <property name="geometry">
@@ -1593,6 +1596,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <height>79</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: F#, G#, A#, B, C#, D#, E#&lt;br/&gt;Minor: D#, E#, F#, G#, A#, B, C#&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
    </widget>
    <widget class="QLabel" name="fs_major_label">
     <property name="geometry">
@@ -1628,6 +1634,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <width>122</width>
       <height>78</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: D, E, F#, G, A, B, C#&lt;br/&gt;Minor: B, C#, D, E, F#, G, A&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="d_major_label">
@@ -1678,6 +1687,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <height>79</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: F, G, A, B♭, C, D, E&lt;br/&gt;Minor: D, E, F, G, A, B♭, C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
    </widget>
    <widget class="QCheckBox" name="bf_major_checkbox">
     <property name="geometry">
@@ -1713,6 +1725,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <width>122</width>
       <height>79</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: B♭, C, D, E♭, F, G, A&lt;br/&gt;Minor: G, A, B♭, C, D, E♭, F&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="b_major_label">
@@ -1750,6 +1765,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <height>79</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: B, C#, D#, E, F#, G#, A#&lt;br/&gt;Minor: G#, A#, B, C#, D#, E, F#&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
    </widget>
    <widget class="QLabel" name="cf_major_label">
     <property name="geometry">
@@ -1785,6 +1803,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <width>122</width>
       <height>78</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: C♭, D♭, E♭, F♭, G♭, A♭, B♭&lt;br/&gt;Minor: A♭, B♭, C♭, D♭, E♭, F♭, G♭&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="af_major_checkbox">
@@ -1822,6 +1843,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <height>78</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: A♭, B♭, C, D♭, E♭, F, G&lt;br/&gt;Minor: F, G, A♭, B♭, C, D♭, E♭&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
    </widget>
    <widget class="QCheckBox" name="c_major_checkbox">
     <property name="geometry">
@@ -1847,6 +1871,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <width>122</width>
       <height>78</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: C, D, E, F, G, A, B&lt;br/&gt;Minor: A, B, C, D, E, F, G&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="c_major_label">
@@ -1897,6 +1924,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <height>78</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: D♭, E♭, F, G♭, A♭, B♭, C&lt;br/&gt;Minor: B♭, C, D♭, E♭, F, G♭, A♭&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
    </widget>
    <widget class="QGraphicsView" name="ef_major_display">
     <property name="geometry">
@@ -1906,6 +1936,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <width>122</width>
       <height>78</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: E♭, F, G, A♭, B♭, C, D&lt;br/&gt;Minor: C, D, E♭, F, G, A♭, B♭&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="ef_major_label">
@@ -1956,6 +1989,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <height>79</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: C#, D#, E#, F#, G#, A#, B#&lt;br/&gt;Minor: A#, B#, C#, D#, E#, F#, G#&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
    </widget>
    <widget class="QLabel" name="cs_major_label">
     <property name="geometry">
@@ -1991,6 +2027,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <width>122</width>
       <height>78</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: G, A, B, C, D, E, F#&lt;br/&gt;Minor: E, F#, G, A, B, C, D&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="g_major_label">
@@ -2041,6 +2080,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <height>78</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: A, B, C#, D, E, F#, G#&lt;br/&gt;Minor: F#, G#, A, B, C#, D, E&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
    </widget>
    <widget class="QCheckBox" name="e_major_checkbox">
     <property name="geometry">
@@ -2077,12 +2119,15 @@ QPushButton[shecret_button=&quot;true&quot;] {
       <height>78</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;white-space:pre&quot;&gt;Major: E, F#, G#, A, B, C#, D#&lt;br/&gt;Minor: C#, D#, E, F#, G#, A, B&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="save_button">
     <property name="geometry">
      <rect>
-      <x>612</x>
-      <y>583</y>
+      <x>208</x>
+      <y>585</y>
       <width>75</width>
       <height>24</height>
      </rect>
@@ -2094,8 +2139,8 @@ QPushButton[shecret_button=&quot;true&quot;] {
    <widget class="QPushButton" name="quit_button">
     <property name="geometry">
      <rect>
-      <x>693</x>
-      <y>583</y>
+      <x>694</x>
+      <y>585</y>
       <width>75</width>
       <height>24</height>
      </rect>
@@ -2107,8 +2152,8 @@ QPushButton[shecret_button=&quot;true&quot;] {
    <widget class="QPushButton" name="help_button">
     <property name="geometry">
      <rect>
-      <x>531</x>
-      <y>583</y>
+      <x>613</x>
+      <y>585</y>
       <width>75</width>
       <height>24</height>
      </rect>
@@ -2117,27 +2162,11 @@ QPushButton[shecret_button=&quot;true&quot;] {
      <string>Help</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="enable_chord_picking_checkbox">
-    <property name="geometry">
-     <rect>
-      <x>32</x>
-      <y>585</y>
-      <width>136</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="statusTip">
-     <string extracomment="Testing"/>
-    </property>
-    <property name="text">
-     <string>Enable Chord Picking</string>
-    </property>
-   </widget>
    <widget class="QComboBox" name="clef_selection">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>584</y>
+      <x>699</x>
+      <y>180</y>
       <width>71</width>
       <height>22</height>
      </rect>
@@ -2166,9 +2195,9 @@ QPushButton[shecret_button=&quot;true&quot;] {
    <widget class="QLabel" name="clef_label">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>587</y>
-      <width>24</width>
+      <x>620</x>
+      <y>183</y>
+      <width>71</width>
       <height>16</height>
      </rect>
     </property>
@@ -2178,15 +2207,64 @@ QPushButton[shecret_button=&quot;true&quot;] {
      </font>
     </property>
     <property name="text">
-     <string>Clef:</string>
+     <string>Enabled Clef:</string>
     </property>
    </widget>
-   <widget class="Line" name="line_2">
+   <widget class="QLabel" name="clef_label_2">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>581</y>
-      <width>16</width>
+      <x>31</x>
+      <y>589</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Profile:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>76</x>
+      <y>586</y>
+      <width>100</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="editable">
+     <bool>true</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>Default</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>183</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Enable Octave Lines</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>582</y>
+      <width>10</width>
       <height>29</height>
      </rect>
     </property>
@@ -2194,13 +2272,37 @@ QPushButton[shecret_button=&quot;true&quot;] {
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
+   <widget class="QPushButton" name="load_profile_button">
+    <property name="geometry">
+     <rect>
+      <x>289</x>
+      <y>585</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Load</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delete_profile_button">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>585</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete</string>
+    </property>
+   </widget>
    <zorder>save_button</zorder>
    <zorder>quit_button</zorder>
    <zorder>help_button</zorder>
-   <zorder>enable_chord_picking_checkbox</zorder>
    <zorder>clef_selection</zorder>
    <zorder>clef_label</zorder>
-   <zorder>line_2</zorder>
    <zorder>gf_major_checkbox</zorder>
    <zorder>gf_major_display</zorder>
    <zorder>gf_major_label</zorder>
@@ -2324,8 +2426,31 @@ QPushButton[shecret_button=&quot;true&quot;] {
    <zorder>piano_gS4</zorder>
    <zorder>piano_gS5</zorder>
    <zorder>piano_gS3</zorder>
+   <zorder>clef_label_2</zorder>
+   <zorder>comboBox</zorder>
+   <zorder>checkBox</zorder>
+   <zorder>line_4</zorder>
+   <zorder>load_profile_button</zorder>
+   <zorder>delete_profile_button</zorder>
   </widget>
  </widget>
  <resources/>
  <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
 </ui>

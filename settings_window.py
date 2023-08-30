@@ -5,22 +5,11 @@ import os
 import typing
 
 from PySide6.QtCore import QEvent, QObject, QPoint, QRect, Qt
-from PySide6.QtGui import (
-    QCloseEvent,
-    QCursor,
-    QHoverEvent,
-    QKeySequence,
-    QMouseEvent,
-    QShortcut,
-)
+from PySide6.QtGui import (QCloseEvent, QCursor, QHoverEvent, QKeySequence,
+                           QMouseEvent, QShortcut)
 from PySide6.QtSvgWidgets import QGraphicsSvgItem
-from PySide6.QtWidgets import (
-    QGraphicsScene,
-    QGraphicsView,
-    QMainWindow,
-    QMessageBox,
-    QPushButton,
-)
+from PySide6.QtWidgets import (QGraphicsScene, QGraphicsView, QMainWindow,
+                               QMessageBox, QPushButton)
 
 from util import make_message_box
 
@@ -51,9 +40,6 @@ class SettingsWindow(QMainWindow):
         self.ui.setupUi(self)
 
         # Load misc widget values
-        self.ui.enable_chord_picking_checkbox.setChecked(
-            existing_settings["chord_picking_enabled"]
-        )
         self.ui.clef_selection.setCurrentText(existing_settings["clef"])
 
         # Loop through all the note buttons
@@ -111,7 +97,7 @@ class SettingsWindow(QMainWindow):
     def funny_easter_egg(self) -> None:  # sourcery skip: class-extract-method
         make_message_box(
             "I put this here on June 19th, 2022 at 10:09 PM and will now promptly forget it exists",
-            "The Game is a game, of which the sole object is to not remember that you are playing it. As soon as you remember that it exists, you have lost and must start again.\n\nWith that, you lose! :)",
+            "Never Gonna Give You Up\nNever Gonna Let You Down\nNever Gonna Run Around and Desert You\nNever Gonna Make You Cry\nNever Gonna Say Goodbye\nNever Gonna Tell a Lie and Hurt You",
         )
 
     def display_help(self) -> None:
@@ -123,7 +109,7 @@ class SettingsWindow(QMainWindow):
         )
 
     # Toggle the note enabled state
-    def invert_note_state(self, note):
+    def invert_note_state(self, note: str):
         note_widget: QPushButton = getattr(self.ui, f"piano_{note}")
         note_widget.setProperty(
             "note_enabled", not note_widget.property("note_enabled")
@@ -196,7 +182,6 @@ class SettingsWindow(QMainWindow):
                 "gf": self.ui.gf_major_checkbox.isChecked(),
                 "cf": self.ui.cf_major_checkbox.isChecked(),
             },
-            "chord_picking_enabled": self.ui.enable_chord_picking_checkbox.isChecked(),
             "clef": self.ui.clef_selection.currentText(),
         }
 
@@ -225,10 +210,18 @@ class SettingsWindow(QMainWindow):
 
             elif msg_box.clickedButton().text() == "Save":
                 self.save_settings(False)
+                self.parent.note_detection_thread.start()
                 event.accept()
 
             elif msg_box.clickedButton().text() == "Discard":
+                self.parent.note_detection_thread.start()
                 event.accept()
+
+        else:
+            if self.parent.settings_opened_when_game_running:
+                self.parent.settings_opened_when_game_running = False
+                self.parent.note_detection_thread.start()
+            event.accept()
 
     def open_debug_window(self):
         self.debug_window.show()

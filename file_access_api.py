@@ -1,6 +1,7 @@
 import json
 import os
 import subprocess
+import sys
 
 from PySide6.QtCore import QCoreApplication
 from PySide6.QtWidgets import QMessageBox
@@ -17,7 +18,7 @@ class FileAccessAPI:
     def get_install_path(self) -> str:
         return (
             os.getcwd()
-            if os.path.isfile(os.path.join(os.getcwd(), "IS_PY"))
+            if sys.argv[-1].endswith(".py") # If it's from VSCode or Python in terminal, it'll end in .py
             else QCoreApplication.applicationDirPath()
         )
 
@@ -32,7 +33,6 @@ class FileAccessAPI:
             json.dump({
                 "enabled_notes": {"cS2": True, "d2": True, "dS2": True, "e2": True, "f2": True, "fS2": True, "g2": True, "gS2": True, "a2": True, "aS2": True, "b2": True, "c3": True, "cS3": True, "d3": True, "dS3": True, "e3": True, "f3": True, "fS3": True, "g3": True, "gS3": True, "a3": True, "aS3": True, "b3": True, "c4": True, "cS4": True, "d4": True, "dS4": True, "e4": True, "f4": True, "fS4": True, "g4": True, "gS4": True, "a4": True, "aS4": True, "b4": True, "c5": True, "cS5": True, "d5": True, "dS5": True, "e5": True, "f5": True, "fS5": True, "g5": True, "gS5": True, "a5": True, "aS5": True, "b5": True, "c6": True, "cS6": True, "d6": True, "dS6": True, "e6": True, "f6": True, "fS6": True, "g6": True, "gS6": True, "a6": True, "aS6": True, "b6": True, "c7": True, "cS7": True},
                 "key_signatures": {"c": True, "g": False, "d": False, "a": False, "e": False, "b": False, "fs": False, "cs": False, "f": False, "bf": False, "ef": False, "af": False, "df": False, "gf": False, "cf": False},
-                "chord_picking_enabled": False,
                 "clef": "Treble",
                 "DEBUG": {
                     "INSTANTLY_OPEN_SETTINGS_WINDOW": False,
@@ -91,11 +91,14 @@ class FileAccessAPI:
         return os.path.join(self.assets_path, os.path.normpath(local_path))
 
     def compile_lilypond_file(self, contents: str) -> None:
+        os.makedirs(self.get_asset_path("lp_temp"), exist_ok=True)
         with open(self.get_asset_path("lp_temp/file.ly"), "w") as outfile:
             outfile.write(contents)
 
+        # All valid OS checking is done in main.py
+        lilypond_path = self.get_asset_path(f"lilypond/{sys.platform}/bin/lilypond.exe")
         subprocess.call(
-            f'"{self.get_asset_path("lilypond/windows/bin/lilypond.exe")}" --loglevel=NONE --svg -dcrop file.ly',
+            f'"{lilypond_path}" --loglevel=NONE --svg -dcrop file.ly',
             cwd=self.get_asset_path("lp_temp"),
             shell=True,
         )

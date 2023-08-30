@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>550</width>
     <height>200</height>
    </rect>
   </property>
@@ -30,7 +30,36 @@
     <item>
      <layout class="QVBoxLayout" name="note_debugger_layout">
       <item>
-       <widget class="QListWidget" name="note_debugger_display"/>
+       <widget class="QTreeWidget" name="note_debugger_display">
+        <property name="rootIsDecorated">
+         <bool>false</bool>
+        </property>
+        <column>
+         <property name="text">
+          <string>Timestamp</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Expected Note</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Expected Freq.</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Heard Note</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Heard Freq.</string>
+         </property>
+        </column>
+       </widget>
       </item>
      </layout>
     </item>

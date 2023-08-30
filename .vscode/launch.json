@@ -12,6 +12,14 @@
             "request": "launch",
             "name": "Compile UIs",
             "program": "ui/designer/compile_uis.py"
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ]
 }

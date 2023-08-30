@@ -10,7 +10,7 @@ import numpy
 import pyaudio
 from PySide6.QtCore import QThread
 
-from util import DataCollector, frequency_to_note
+from util import DataCollector, Note
 
 
 class NoteDetectionThread(QThread):
@@ -35,6 +35,7 @@ class NoteDetectionThread(QThread):
             frames_per_buffer=self.CHUNK_SIZE,
         )
 
+        # This library is magic. Thank you aubio devs.
         self.pitch_detector = aubio.pitch(
             "default", self.CHUNK_SIZE * 2, self.CHUNK_SIZE, self.RATE
         )
@@ -44,43 +45,43 @@ class NoteDetectionThread(QThread):
         self.data_collector: DataCollector | None = None
         self.collecting_data: bool = False
 
-        self.octave_to_markers = {2: ",", 3: "", 4: "'", 5: "''", 6: "'''", 7: "''''"}
-
-    def convert_note_to_lilypond_pitch(self, note: str, octave: int):
-        # note, octave with markers
-        return f"{note}{self.octave_to_markers[octave]}"
-
     def run(self):
         self.is_running = True
+        # Keep the microphone line open for a theoretically infinite time (it's like 3 years or something IDK)
         for _ in range(int(self.RATE / self.CHUNK_SIZE * 2147483647)):
+            # Stop once we have a note
             if not self.is_running:
                 break
 
+            # I forgot what frombuffer is for, but I assure it's necessary
             data = self.microphone_input_stream.read(self.CHUNK_SIZE)
             q = numpy.frombuffer(data, dtype=aubio.float_type)
             pitch = self.pitch_detector(q)[0]
 
+            # Initialize the DataCollector
+            # TODO why is this not initialized at the start of the function?
             if not self.collecting_data and pitch:
                 self.data_collector = DataCollector()
                 self.collecting_data = True
 
+            # Add the data to the DataCollector
             if self.collecting_data:
+                # TODO is pitch 0 when the mic is silent?
                 if pitch == 0:
                     self.collecting_data = False
 
+                    # DataCollector has a getter which automatically rejects outliers and returns the length of the internal array
                     data_point_total = self.data_collector.data_points
+                    # Get the average note value
                     average = self.data_collector.get_average()
-                    note = frequency_to_note(average)
+                    # Take the average frequency heard and turn it into a note value
+                    note = Note.parse_from_frequency(average)
                     self.data_collector = None
 
                     # Make sure we have enough data points so we don't just collect random noise
                     if data_point_total > 5:
-                        self.parent.note_detected(
-                            average,
-                            self.convert_note_to_lilypond_pitch(
-                                note[:-1].lower(), int(note[-1])
-                            ),
-                        )
+                        # Inform the main window we have heard a note, and what note that was
+                        self.parent.note_detected(note)
                 else:
                     self.data_collector.add_data(pitch)
 
