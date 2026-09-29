@@ -94,7 +94,7 @@ class SettingsWindow(QMainWindow):
         self.debug_window: DebugWindow = DebugWindow(self)
 
     # I regret nothing
-    def funny_easter_egg(self) -> None:  # sourcery skip: class-extract-method
+    def funny_easter_egg(self) -> None:
         make_message_box(
             "I put this here on June 19th, 2022 at 10:09 PM and will now promptly forget it exists",
             "Never Gonna Give You Up\nNever Gonna Let You Down\nNever Gonna Run Around and Desert You\nNever Gonna Make You Cry\nNever Gonna Say Goodbye\nNever Gonna Tell a Lie and Hurt You",
@@ -163,6 +163,7 @@ class SettingsWindow(QMainWindow):
 
     # Grab the needed variables from the UI and wrap them in a dictionary
     def convert_state_to_output(self) -> dict:
+        # TODO profiles
         return {
             "enabled_notes": self.enabled_notes,
             "key_signatures": {

@@ -2210,7 +2210,7 @@ QPushButton[shecret_button=&quot;true&quot;] {
      <string>Enabled Clef:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="clef_label_2">
+   <widget class="QLabel" name="profile_label">
     <property name="geometry">
      <rect>
       <x>31</x>
@@ -2426,7 +2426,7 @@ QPushButton[shecret_button=&quot;true&quot;] {
    <zorder>piano_gS4</zorder>
    <zorder>piano_gS5</zorder>
    <zorder>piano_gS3</zorder>
-   <zorder>clef_label_2</zorder>
+   <zorder>profile_label</zorder>
    <zorder>comboBox</zorder>
    <zorder>checkBox</zorder>
    <zorder>line_4</zorder>
